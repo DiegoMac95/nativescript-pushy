@@ -1,7 +1,5 @@
-import { ApplicationEventData } from "tns-core-modules/application";
-import * as application from "tns-core-modules/application";
-import { AndroidActivityRequestPermissionsEventData, LaunchEventData } from "tns-core-modules/application";
-import * as utils from "tns-core-modules/utils/utils";
+import { ApplicationEventData, Application as application, Utils as utils } from "@nativescript/core";
+import { AndroidActivityRequestPermissionsEventData, LaunchEventData } from "@nativescript/core/application";
 import { TNSPushNotification } from "./";
 
 declare const androidx, com: any;
@@ -114,6 +112,7 @@ const transformNativeNotificationIntoTNSPushNotification = (extras?: android.os.
   return notification;
 };
 
+@NativeClass()
 @JavaProxy("com.tns.plugin.pushy.PushyPushReceiver")
 class PushyPushReceiver extends android.content.BroadcastReceiver {
 
