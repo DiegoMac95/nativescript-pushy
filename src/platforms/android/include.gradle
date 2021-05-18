@@ -1,4 +1,4 @@
 dependencies {
     // 48 works, 49 no longer does (check adb logcat when receiving a notification: Android runtime crash)
-    implementation "me.pushy:sdk:1.0.48"
+    implementation "me.pushy:sdk:1.0.69"
 }

@@ -1,6 +1,6 @@
-import * as application from "tns-core-modules/application/application";
-import { device } from "tns-core-modules/platform";
-import { getClass } from "tns-core-modules/utils/types";
+import * as application from "@nativescript/core/application";
+import { device } from "@nativescript/core/platform";
+import { getClass } from "@nativescript/core/utils/types";
 import { TNSPushNotification } from "./";
 
 let notificationHandler: (notification: TNSPushNotification) => void;

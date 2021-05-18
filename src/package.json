@@ -53,11 +53,16 @@
     "prompt": "^1.0.0",
     "rimraf": "^2.6.3",
     "semver": "^5.6.0",
-    "tns-core-modules": "~6.1.0",
     "tns-platform-declarations": "~6.1.0",
     "tslint": "^5.12.1",
-    "typescript": "3.4.5"
+    "@nativescript/android": "~7.0.0",
+    "@nativescript/ios": "~7.0.0",
+    "@nativescript/types": "~7.0.0",
+    "@nativescript/webpack": "~3.0.0",
+    "typescript": "~3.9.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@nativescript/core": "8.0.3"
+  },
   "bootstrapper": "nativescript-plugin-seed"
 }

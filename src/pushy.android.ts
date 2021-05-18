@@ -68,13 +68,13 @@ function requestWriteExternalStoragePermission(): Promise<boolean> {
   return new Promise((resolve, reject) => {
     const onPermissionResultCallback = (args: AndroidActivityRequestPermissionsEventData) => {
       if (args.requestCode === WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE && args.grantResults.length === 1) {
-        application.android.off(application.AndroidApplication.activityRequestPermissionsEvent, onPermissionResultCallback);
+        application.android.off(application.android.nativeApp.activityRequestPermissionsEvent, onPermissionResultCallback);
         resolve(args.grantResults[0] !== android.content.pm.PackageManager.PERMISSION_DENIED);
       }
     };
 
     // grab the permission dialog result
-    application.android.on(application.AndroidApplication.activityRequestPermissionsEvent, onPermissionResultCallback);
+    application.android.on(application.android.nativeApp.activityRequestPermissionsEvent, onPermissionResultCallback);
 
     // invoke the permission dialog
     androidx.core.app.ActivityCompat.requestPermissions(getActivity(), [android.Manifest.permission.WRITE_EXTERNAL_STORAGE], WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
